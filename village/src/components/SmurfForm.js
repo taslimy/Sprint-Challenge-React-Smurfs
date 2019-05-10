@@ -68,7 +68,7 @@ class SmurfForm extends Component {
               </p>
             </div>
 
-            <form onSubmit={this.addSmurf}>
+            <form>
               <div className="field">
                 <label>First Name & Last Name</label>
                 <input
