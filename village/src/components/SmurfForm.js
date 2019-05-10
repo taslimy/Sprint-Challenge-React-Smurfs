@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 class SmurfForm extends Component {
   constructor(props) {
@@ -63,14 +62,14 @@ class SmurfForm extends Component {
               <div className="header">To Become a smurf!</div>
               <p>
                 All you have to do is full out the form below. Then, click on
-                <strong> Back to Current Smurf</strong> see if you have been
+                <strong> Current Smurfs</strong> see if you have been
                 added.
               </p>
             </div>
 
             <form>
               <div className="field">
-                <label>First Name & Last Name</label>
+                <label>Smurf Name</label>
                 <input
                   onChange={this.handleInputChange}
                   placeholder="name"
@@ -90,7 +89,7 @@ class SmurfForm extends Component {
                 />
               </div>
               <div className="field">
-                <label>height</label>
+                <label>Height</label>
                 <input
                   onChange={this.handleInputChange}
                   placeholder="height"

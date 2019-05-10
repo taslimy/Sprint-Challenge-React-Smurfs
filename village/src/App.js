@@ -33,15 +33,15 @@ class App extends Component {
   }
 
   addASmurf = newSmurf => {
-    console.log(newSmurf);
+    // console.log(newSmurf);
     axios
       .post("http://localhost:3333/smurfs", newSmurf)
-      .then(response => {
-        this.setState({ smurfs: response.data });
+      .then(res => {
+        this.setState({ smurfs: res.data });
         this.props.history.push("/");
       })
-      .catch(error => {
-        console.log(error);
+      .catch(err => {
+        console.log(err);
       });
   };
 
