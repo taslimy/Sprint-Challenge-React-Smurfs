@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -18,11 +17,20 @@ class SmurfForm extends Component {
     axios
       .post(`http://localhost:3333/smurfs`, { ...this.state })
       .then(res => {
-        this.setState({ smurfs: res.data });
+        this.setState({
+          smurfs: res.data
+        });
         this.props.history.push("/");
       })
-      .catch(err => console.log(err));
-  }
+      .catch(err => {
+        console.log(err);
+      });
+    this.setState({
+      name: "",
+      age: "",
+      height: ""
+    });
+  };
 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
