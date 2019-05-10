@@ -1,3 +1,23 @@
-.App {
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.flex-card {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui .card {
+  margin-top: 0 !important;
+}
+
+.ui .card:last-child {
+  margin-top: 0 !important;
 }
