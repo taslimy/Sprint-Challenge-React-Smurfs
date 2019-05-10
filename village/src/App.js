@@ -33,6 +33,25 @@ class App extends Component {
       });
   }
 
+  updateParentState = data => {
+    this.setState({
+      smurfs: data
+    });
+  };
+
+  addASmurf = newSmurf => {
+    console.log(newSmurf);
+    axios
+      .post("http://localhost:3333/smurfs", newSmurf)
+      .then(response => {
+        this.setState({ smurfs: response.data });
+        this.props.history.push("/");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   deleteSmurf = (e, id) => {
     e.preventDefault();
     axios
@@ -62,7 +81,13 @@ class App extends Component {
         <Route
           exact
           path="/smurf-form"
-          render={props => <SmurfForm {...props} smurfs={this.state.smurfs} />}
+          render={props => (
+            <SmurfForm
+              {...props}
+              smurfs={this.state.smurfs}
+              addASmurf={this.addASmurf}
+            />
+          )}
         />
       </div>
     );

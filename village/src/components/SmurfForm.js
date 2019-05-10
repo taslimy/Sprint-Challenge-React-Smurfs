@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -11,20 +11,38 @@ class SmurfForm extends Component {
     };
   }
 
+  //  saw what i did wrong. / / / / /
+  ////
+  // addSmurf = event => {
+  //   event.preventDefault();
+  //   // add code to create the smurf using the api
+  //   axios
+  //     .post(`http://localhost:3333/smurfs`, { ...this.state })
+  //     .then(res => {
+  //       this.setState({
+  //         smurfs: res.data
+  //       });
+  //       this.props.history.push("/");
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  //   this.setState({
+  //     name: "",
+  //     age: "",
+  //     height: ""
+  //   });
+  // };
+
   addSmurf = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
-    axios
-      .post(`http://localhost:3333/smurfs`, { ...this.state })
-      .then(res => {
-        this.setState({
-          smurfs: res.data
-        });
-        this.props.history.push("/");
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    const smurfs = {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    };
+    this.props.addASmurf(smurfs);
+
     this.setState({
       name: "",
       age: "",
