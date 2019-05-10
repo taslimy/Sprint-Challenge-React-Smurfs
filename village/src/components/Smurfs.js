@@ -14,7 +14,7 @@ class Smurfs extends Component {
           <div className="header">Smurf Village!</div>
           <p>These are currently the members in our Smurf Village.</p>
         </div>
-        <ul>
+        <section className="flex-card">
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
@@ -27,7 +27,7 @@ class Smurfs extends Component {
               />
             );
           })}
-        </ul>
+          </section>
       </div>
     );
   }

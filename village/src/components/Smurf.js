@@ -6,8 +6,8 @@ const Smurf = props => {
   return (
     <Fragment>
       <div className="ui card">
-        <div class="ui placeholder">
-          <div class="square image" />
+        <div className="ui placeholder">
+          <div className="square image" />
         </div>
         <div className="content">
           <div className="header">{props.name}</div>

@@ -11,8 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurfs: [],
-      updated: false
+      smurfs: []
     };
   }
 
@@ -32,12 +31,6 @@ class App extends Component {
         console.log(err);
       });
   }
-
-  updateParentState = data => {
-    this.setState({
-      smurfs: data
-    });
-  };
 
   addASmurf = newSmurf => {
     console.log(newSmurf);
